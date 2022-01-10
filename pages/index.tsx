@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Header from '../components/Header'
 
 export default function Home() {
   return (
@@ -7,8 +8,9 @@ export default function Home() {
         <title>Eric Anderson</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>new site</h1>
-
+      
+      <Header />
+      {/* Header - Name github  Intro Skills */}
     </div>
   )
 }
