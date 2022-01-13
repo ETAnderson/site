@@ -13,7 +13,7 @@ function Header() {
             <div className='flex flex-row justify-evenly max-w-2xl'>
                 <HeaderItem  Icon={UserCircleIcon} title='Intro' />
                 <HeaderItem  Icon={BeakerIcon} title='Skills' />
-                <HeaderItem  Icon={CollectionIcon} title='Eric on Github' />
+                <HeaderItem  Icon={CollectionIcon} title='Github' />
             </div>
         </header>
     )
