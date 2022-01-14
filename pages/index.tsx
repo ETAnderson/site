@@ -1,9 +1,14 @@
 import Head from 'next/head'
 import { useState } from 'react';
 import Body from '../components/Body'
+import HeaderItem from "../components/HeaderItem"
+import {
+    UserCircleIcon,
+    CollectionIcon,
+    BeakerIcon,
+} from '@heroicons/react/outline'
 
 
-import Header from '../components/Header'
 type BodyProps = {
   image: string,
   text: string,
@@ -20,10 +25,15 @@ const Skills = {
 }
 
 
-
 export default function Home({ image, text }: BodyProps) {
   const [ currentDisplay, setCurrentDisplay ] = useState(Intro);
 
+  const handleClick = (display: any) => {
+    setCurrentDisplay({
+      image: display.image,
+      text: display.text
+    });
+  }
 
   return (
     <div className="">
@@ -32,7 +42,18 @@ export default function Home({ image, text }: BodyProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-      <Header />
+      <header className='flex flex-col sm:flex-row m-5 justify-between items-center'>
+        <h1 className="text-2xl pb-10">ERIC ANDERSON</h1>
+        <div className='flex flex-row justify-evenly max-w-2xl'>
+        
+          <HeaderItem handleClick={() =>handleClick(Intro)} Icon={UserCircleIcon} title='Intro' />
+
+          <HeaderItem handleClick={() => handleClick(Skills)} Icon={BeakerIcon} title='Skills' />
+
+          <HeaderItem  Icon={CollectionIcon} title='Github' />
+
+        </div>
+      </header> 
       {/* Header - Name github  Intro Skills */}
       <Body image={currentDisplay.image} text={currentDisplay.text}/>
       {/* Body req: image=svg && text=string */}
