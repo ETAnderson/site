@@ -16,12 +16,12 @@ type BodyProps = {
 
 const Intro= {
   image: 'https://avatars.githubusercontent.com/u/2357717?v=4',
-  text: 'Hello this is gonna be the new INTRO body! Hopefully using the body as a component will make single page transitions cleaner'
+  text: 'Hello this is gonna be the new INTRO body! Hopefully using the body as a component will make single page transitions cleaner!'
 }
 
 const Skills = {
   image: 'https://avatars.githubusercontent.com/u/2357717?v=4',
-  text: 'Hello this is gonna be the new SKILL body! Hopefully using the body as a component will make single page transitions cleaner'
+  text: 'Hello this is gonna be the new SKILL body! Hopefully using the body as a component will make single page transitions cleaner!'
 }
 
 
