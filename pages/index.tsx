@@ -28,7 +28,7 @@ const Skills = {
 export default function Home({ image, text }: BodyProps) {
   const [ currentDisplay, setCurrentDisplay ] = useState(Intro);
 
-  const handleClick = (display: any) => {
+  const onClick = (display: any) => {
     setCurrentDisplay({
       image: display.image,
       text: display.text
@@ -46,16 +46,16 @@ export default function Home({ image, text }: BodyProps) {
         <h1 className="text-2xl pb-10">ERIC ANDERSON</h1>
         <div className='flex flex-row justify-evenly max-w-2xl'>
         
-          <HeaderItem handleClick={() =>handleClick(Intro)} Icon={UserCircleIcon} title='Intro' />
+          <HeaderItem onClick={() =>onClick(Intro)} Icon={UserCircleIcon} title='Intro' />
 
-          <HeaderItem handleClick={() => handleClick(Skills)} Icon={BeakerIcon} title='Skills' />
+          <HeaderItem onClick={() => onClick(Skills)} Icon={BeakerIcon} title='Skills' />
 
           <HeaderItem  Icon={CollectionIcon} title='Github' />
 
         </div>
       </header> 
       {/* Header - Name github  Intro Skills */}
-      <Body image={currentDisplay.image} text={currentDisplay.text}/>
+      <Body display={currentDisplay}/>
       {/* Body req: image=svg && text=string */}
     </div>
   )
