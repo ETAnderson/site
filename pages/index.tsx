@@ -21,7 +21,7 @@ const Intro= {
 }
 
 const Skills = {
-  image:"/RainbowTree.jpg",
+  image:"https://raw.githubusercontent.com/ETAnderson/site/main/public/RainbowTree.jpg",
   text: 'So far, this website has been built using the fantastic Nextjs, and in particular the React hook "useState" to manage a state and replicated multi-page functionality from a single page app, which provides a more pleasant user experience and better search engine optimization. The beautiful painting above, however, was made entirely by my even more beautiful wife, Rochelle!'
 }
 
