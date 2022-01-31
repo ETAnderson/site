@@ -127,7 +127,7 @@ export default function Home(
         </div>
       </header>
 
-      <div className="flex flex-row justify-between max-w-2xl ">
+      <div className="flex flex-row justify-between mx-auto max-w-2xl ">
         {isDropped &&
           sites.map((site) => (
             <DropdownItem
