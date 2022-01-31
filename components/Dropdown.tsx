@@ -7,7 +7,7 @@ interface SiteProps {
   sites: [Site];
 }
 
-function Dropdown({ toggleDropDown }: any) {
+function Dropdown() {
   return (
     <div className="flex flex-col items-center cursor-pointer group w-12 sm:w-20 hover:text-white">
       <ArrowCircleDownIcon className="h-8 mb-1 group-hover:animate-bounce " />
