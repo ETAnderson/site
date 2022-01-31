@@ -39,7 +39,7 @@ const sites: { name: string; link: string; sitePic: string }[] = [
       "https://upload.wikimedia.org/wikipedia/commons/0/0d/Medium_%28website%29_logo.svg",
   }, // Medium
   {
-    name: "Facebook-clone",
+    name: "Facebook clone",
     link: "https://facebook-clone-79a01.web.app/",
     sitePic:
       "https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg",
