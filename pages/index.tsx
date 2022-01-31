@@ -8,11 +8,49 @@ import {
   BeakerIcon,
 } from "@heroicons/react/outline";
 import Dropdown from "../components/Dropdown";
+import { Display, Site } from "../typings";
+import DropdownItem from "../components/DropdownItem";
+
+// TODO: 1: add state for toggling dropdown - done, isOpen
+// 2: add a new changeDisplay handler for toggling state - done, toggleDropDown
+// 3: pass handler to Dropdown as a prop. - done
+// 4: add conditional display for dropdown list tied to dropdown state
 
 type BodyProps = {
   image: string;
   text: string;
 };
+
+interface SiteProps {
+  sites: [Site];
+}
+
+const sites: { name: string; link: string; sitePic: string }[] = [
+  {
+    name: "Hulu clone",
+    link: "https://hulu-clone-nine-dusky.vercel.app/",
+    sitePic:
+      "https://upload.wikimedia.org/wikipedia/commons/0/03/Hulu_logo_%282014%29.svg",
+  }, // Hulu
+  {
+    name: "Medium clone",
+    link: "https://medium-clone-five.vercel.app/",
+    sitePic:
+      "https://upload.wikimedia.org/wikipedia/commons/0/0d/Medium_%28website%29_logo.svg",
+  }, // Medium
+  {
+    name: "Facebook-clone",
+    link: "https://facebook-clone-79a01.web.app/",
+    sitePic:
+      "https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg",
+  }, // Facebook
+  {
+    name: "Gmail clone",
+    link: "https://clone-e3a0d.web.app/",
+    sitePic:
+      "https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg",
+  }, // Gmail
+];
 
 const Intro = {
   image: "https://avatars.githubusercontent.com/u/2357717?v=4",
@@ -22,13 +60,17 @@ const Intro = {
 const Skills = {
   image:
     "https://raw.githubusercontent.com/ETAnderson/site/main/public/RainbowTree.jpg",
-  text: 'So far, this website has been built using the fantastic Nextjs, and in particular the React hook "useState" to manage a state and replicated multi-page functionality from a single page app, which provides a more pleasant user experience and better search engine optimization. The beautiful painting above, however, was made entirely by my even more beautiful wife, Rochelle!',
+  text: 'So far, this website has been built using the fantastic Nextjs, and in particular the React hook "useState" to manage a state and replicated multi-page functionality from a single page app, which provides a more pleasant user experience and better search engine optimization. I also employ useState to control the functionality of the Demos dropdown menu. The beautiful painting above, however, was made entirely by my even more beautiful wife, Rochelle!',
 };
 
-export default function Home({ image, text }: BodyProps) {
+export default function Home(
+  { image, text }: BodyProps,
+  { link, sitePic }: Site
+) {
   const [currentDisplay, setCurrentDisplay] = useState(Intro);
+  const [isDropped, setIsDropped] = useState(false);
 
-  const onClick = (display: any) => {
+  const changeDisplay = (display: Display) => {
     setCurrentDisplay({
       image: display.image,
       text: display.text,
@@ -46,18 +88,18 @@ export default function Home({ image, text }: BodyProps) {
         <h1 className="text-2xl pb-10">ERIC ANDERSON</h1>
         <div className="flex flex-row justify-evenly max-w-2xl">
           <HeaderItem
-            onClick={() => onClick(Intro)}
+            onClick={() => changeDisplay(Intro)}
             Icon={UserCircleIcon}
             title="Intro"
           />
-
           <HeaderItem
-            onClick={() => onClick(Skills)}
+            onClick={() => changeDisplay(Skills)}
             Icon={BeakerIcon}
             title="Skills"
           />
-
-          <Dropdown />
+          <button onClick={() => setIsDropped(!isDropped)}>
+            <Dropdown />
+          </button>
 
           <a
             className="group flex flex-col items-center cursor-pointer group w-12 sm:w-20 hover:text-white"
@@ -84,6 +126,19 @@ export default function Home({ image, text }: BodyProps) {
           </a>
         </div>
       </header>
+
+      <div className="flex flex-row justify-between max-w-2xl ">
+        {isDropped &&
+          sites.map((site) => (
+            <DropdownItem
+              key={site.name}
+              name={site.name}
+              link={site.link}
+              sitePic={site.sitePic}
+            />
+          ))}
+      </div>
+
       {/* Header - Name github  Intro Skills */}
       <Body display={currentDisplay} />
       {/* Body req: image=svg && text=string */}
