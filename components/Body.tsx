@@ -1,20 +1,20 @@
-import Image from 'next';
+import Image from "next";
 
 type BodyProps = {
-    display: any,
-}
+  display: any;
+};
 
 function Body({ display }: BodyProps) {
-    return (
-        <div className="flex flex-col items-center justify-center">
-            <img
-                className="rounded-full w-1/3 h-1/3 mb-10 object-contain" 
-                src={display.image} alt="" />
-           <p className="text-white mx-10">{display.text}</p>
-        </div>
-    )
+  return (
+    <div className="flex flex-col items-center justify-center bg-gray-900 py-5 mx-10 rounded-lg">
+      <img
+        className="rounded-full w-1/5 h-1/5 mb-10 object-contain"
+        src={display.image}
+        alt=""
+      />
+      <p className="text-white mx-10">{display.text}</p>
+    </div>
+  );
 }
 
-export
-
-default Body
+export default Body;

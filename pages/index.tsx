@@ -60,7 +60,7 @@ const Intro = {
 const Skills = {
   image:
     "https://raw.githubusercontent.com/ETAnderson/site/main/public/RainbowTree.jpg",
-  text: 'So far, this website has been built using the fantastic Nextjs, and in particular the React hook "useState" to manage a state and replicated multi-page functionality from a single page app, which provides a more pleasant user experience and better search engine optimization. I also employ useState to control the functionality of the Demos dropdown menu. The beautiful painting above, however, was made entirely by my even more beautiful wife, Rochelle!',
+  text: 'So far, this website has been built using the fantastic Nextjs, and in particular the React hook "useState" to manage a state and replicated multi-page functionality from a single page app, which provides a more pleasant user experience and better search engine optimization. I also employ useState to control the functionality of the Demos dropdown menu. All styling is done with TailwindCSS. The beautiful painting above, however, was made entirely by my even more beautiful wife, Rochelle!',
 };
 
 export default function Home(
@@ -84,7 +84,7 @@ export default function Home(
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="flex flex-col sm:flex-row m-5 justify-between items-center">
+      <header className="flex flex-col sm:flex-row mx-5 mt-5 justify-between items-center">
         <h1 className="text-2xl pb-10">ERIC ANDERSON</h1>
         <div className="flex flex-row justify-evenly max-w-2xl">
           <HeaderItem
@@ -127,7 +127,9 @@ export default function Home(
         </div>
       </header>
 
-      <div className="flex flex-row justify-between mx-auto max-w-2xl ">
+      <hr className="border-gray-800  mx-5 " />
+
+      <div className="flex flex-row justify-between my-5 mx-auto max-w-2xl">
         {isDropped &&
           sites.map((site) => (
             <DropdownItem

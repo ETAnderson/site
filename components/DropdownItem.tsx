@@ -4,9 +4,13 @@ import { Site } from "../typings";
 
 function DropdownItem({ name, link, sitePic }: Site) {
   return (
-    <a className="flex flex-col align-middle p-2 group" key={name} href={link}>
+    <a
+      className="flex flex-col justify-center p-5 group  shadow-2xl"
+      key={name}
+      href={link}
+    >
       <Image
-        className="justify-center object-contain group-hover:animate-bounce w-6 h-6"
+        className="object-contain group-hover:animate-pulse"
         src={sitePic}
         height={40}
         width={40}
