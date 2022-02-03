@@ -1,18 +1,31 @@
 import Image from "next";
+import { Display } from "../typings";
 
-type BodyProps = {
-  display: any;
-};
+interface BodyProp {
+  image: string;
+  articles: {
+    title: string;
+    text: string;
+  }[];
+}
 
-function Body({ display }: BodyProps) {
+function Body({ image, articles }: BodyProp) {
   return (
-    <div className="flex flex-col items-center justify-center bg-gray-900 py-5 mx-10 rounded-lg">
+    <div className="grid gap-5 grid-cols-1 md:grid-cols-3 mx-5">
       <img
-        className="rounded-full w-1/5 h-1/5 mb-10 object-contain"
-        src={display.image}
+        className="rounded-2xl shadow-md place-self-center"
+        src={image}
         alt=""
       />
-      <p className="text-white mx-10">{display.text}</p>
+      {articles.map((article) => (
+        <article
+          key={article.title}
+          className="text-white p-5 bg-gray-900 rounded-2xl shadow-md"
+        >
+          <h2 className="text-2xl mb-2">{article.title}</h2>
+          <p>{article.text}</p>
+        </article>
+      ))}
     </div>
   );
 }

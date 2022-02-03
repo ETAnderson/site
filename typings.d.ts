@@ -6,5 +6,8 @@ export interface Site {
 
 export interface Display {
     image: string;
-    text: string;
+    articles: {
+        title: string;
+        text: string;
+    }[];
 }
