@@ -6,12 +6,14 @@ import {
   UserCircleIcon,
   CollectionIcon,
   BeakerIcon,
+  MoonIcon,
 } from "@heroicons/react/outline";
 import Dropdown from "../components/Dropdown";
 import { Display, Site } from "../typings";
 import DropdownItem from "../components/DropdownItem";
 import { Intro } from "../data/IntroData";
 import { Skills } from "../data/SkillsData";
+import { useTheme } from "next-themes";
 
 // TODO: 1: set up grid for body
 // 2: change intro and skills objects into "image"string and "articles"array of strings
@@ -54,6 +56,8 @@ export default function Home(
 
   const [isDropped, setIsDropped] = useState(false);
 
+  const { theme, setTheme } = useTheme();
+
   return (
     <div className="">
       <Head>
@@ -62,7 +66,17 @@ export default function Home(
       </Head>
 
       <header className="flex flex-col sm:flex-row mx-5 mt-5 justify-between items-center">
-        <h1 className="text-2xl pb-10">ERIC ANDERSON</h1>
+        <h1 className="text-4xl pb-5">ERIC ANDERSON</h1>
+        <div
+          onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+          className="flex flex-col p-2 cursor-pointer justify-center items-center group"
+        >
+          <MoonIcon className="h-8 group-hover:animate-bounce" />
+          <h1 className="opacity-0 group-hover:opacity-100 tracking-widest">
+            {" "}
+            Toggle to {theme === "light" ? "dark" : "light"}
+          </h1>
+        </div>
         <div className="flex flex-row justify-evenly max-w-2xl">
           <HeaderItem
             onClick={() => setCurrentDisplay(Intro)}
@@ -82,10 +96,7 @@ export default function Home(
             className="group flex flex-col items-center cursor-pointer group w-12 sm:w-20 hover:text-white"
             href="https://github.com/ETAnderson"
           >
-            <img
-              src="/GitHub-Mark-Light-64px.png"
-              className="h-8 mb-1 group-hover:animate-bounce "
-            />
+            <CollectionIcon className="h-8 mb-1 group-hover:animate-bounce " />
             <h1 className="opacity-0 group-hover:opacity-100 tracking-widest">
               {" "}
               Github{" "}
@@ -96,7 +107,7 @@ export default function Home(
 
       <hr className="border-gray-800 mx-5 " />
 
-      <div className="flex flex-col md:flex-row justify-between m-5 md:justify-center  ml-15 ">
+      <div className="flex flex-col md:flex-row items-center m-5 md:justify-between   ml-15 ">
         {isDropped &&
           sites.map((site) => (
             <DropdownItem
@@ -109,7 +120,7 @@ export default function Home(
       </div>
       {isDropped && <hr className="border-gray-800 m-5 " />}
 
-      <Body image={currentDisplay.image} articles={currentDisplay.articles!} />
+      <Body image={currentDisplay.image} articles={currentDisplay.articles} />
     </div>
   );
 }

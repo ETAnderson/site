@@ -3,8 +3,8 @@ export const Skills = {
     "https://raw.githubusercontent.com/ETAnderson/site/main/public/RainbowTree.jpg",
   articles: [
     {
-      title: "Skills Intro",
-      text: " All styling is done with TailwindCSS. The beautiful painting above, however, was made entirely by my even more beautiful wife, Rochelle!",
+      title: "Skills used here!",
+      text: " This beautiful painting was made entirely by my even more beautiful wife, Rochelle! However, the rest of the site was made by me with the following technologies",
     },
     {
       title: "React",
@@ -16,7 +16,7 @@ export const Skills = {
     },
     {
       title: "TailwindCSS",
-      text: "https://tailwindcss.com/ A utility-first CSS framework packed with classes that can be composed to build any design, directly in your markup. I personally enjoy Tailwind for keeping my styling with the code its associated with and the usefulness/speed of its utility classes. Tailwind works wonderfully with React, whether using grid or flex",
+      text: "https://tailwindcss.com/ A utility-first CSS framework packed with classes that can be composed to build any design, directly in your markup. I personally enjoy Tailwind for keeping my styling with the code its associated with and the usefulness/speed of its utility classes.",
     },
     {
       title: "Typescript",
