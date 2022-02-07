@@ -66,18 +66,18 @@ export default function Home(
       </Head>
 
       <header className="flex flex-col sm:flex-row mx-5 mt-5 justify-between items-center">
-        <h1 className="text-4xl pb-5">ERIC ANDERSON</h1>
+        <h1 className="text-4xl md:pb-5">ERIC ANDERSON</h1>
         <div
           onClick={() => setTheme(theme === "light" ? "dark" : "light")}
           className="flex flex-col p-2 cursor-pointer justify-center items-center group"
         >
           <MoonIcon className="h-8 group-hover:animate-bounce" />
-          <h1 className="opacity-0 group-hover:opacity-100 tracking-widest">
+          <h1 className=" opacity-0 group-hover:opacity-100 tracking-widest">
             {" "}
             Toggle to {theme === "light" ? "dark" : "light"}
           </h1>
         </div>
-        <div className="flex flex-row justify-evenly max-w-2xl">
+        <div className="flex flex-row justify-evenly ">
           <HeaderItem
             onClick={() => setCurrentDisplay(Intro)}
             Icon={UserCircleIcon}

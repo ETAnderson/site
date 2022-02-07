@@ -12,7 +12,7 @@ function Body({ image, articles }: Display) {
       {articles.map((article) => (
         <article
           key={article.title}
-          className="text-white p-5 bg-[#06202A] dark:bg-gray-900 rounded-2xl shadow-md"
+          className="text-white max-w-1/3 p-5 bg-[#06202A] dark:bg-gray-900 rounded-2xl shadow-md"
         >
           <h2 className="text-2xl mb-2">{article.title}</h2>
           <p>{article.text}</p>
