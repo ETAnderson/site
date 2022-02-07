@@ -1,15 +1,7 @@
 import Image from "next";
 import { Display } from "../typings";
 
-interface BodyProp {
-  image: string;
-  articles: {
-    title: string;
-    text: string;
-  }[];
-}
-
-function Body({ image, articles }: BodyProp) {
+function Body({ image, articles }: Display) {
   return (
     <div className="grid gap-5 grid-cols-1 md:grid-cols-3 mx-5">
       <img

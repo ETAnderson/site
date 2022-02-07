@@ -9,6 +9,5 @@ export const Intro = {
       title: "Introductions, firstly...",
       text: "  My name is Eric and I am a web developer. Pleased to meet you!",
     },
-    ,
   ],
 };

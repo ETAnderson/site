@@ -109,7 +109,7 @@ export default function Home(
       </div>
       {isDropped && <hr className="border-gray-800 m-5 " />}
 
-      <Body image={currentDisplay.image} articles={currentDisplay.articles} />
+      <Body image={currentDisplay.image} articles={currentDisplay.articles!} />
     </div>
   );
 }

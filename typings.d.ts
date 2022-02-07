@@ -4,10 +4,12 @@ export interface Site {
     sitePic: string;
 }
 
+export interface Articles {
+    title: string;
+    text: string;
+};
 export interface Display {
     image: string;
-    articles: {
-        title: string;
-        text: string;
-    }[];
+    articles: Array<Articles>;
 }
+
