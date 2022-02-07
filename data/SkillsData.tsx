@@ -12,15 +12,15 @@ export const Skills = {
     },
     {
       title: "Next.js",
-      text: `Next.js is a "batteries-included" style framework for React, and is part of the excellent suite of Vercel products. I utilize Next.js for the ease of`,
+      text: `Next.js is a "batteries-included" style framework for React, and is part of the excellent suite of Vercel products. I utilize Next.js for the ease of use while developing, and out-of-the-box routing `,
     },
     {
       title: "TailwindCSS",
-      text: "",
+      text: "https://tailwindcss.com/ A utility-first CSS framework packed with classes that can be composed to build any design, directly in your markup. I personally enjoy Tailwind for keeping my styling with the code its associated with and the usefulness/speed of its utility classes. Tailwind works wonderfully with React, whether using grid or flex",
     },
     {
       title: "Typescript",
-      text: "",
+      text: "TypeScript is a strongly typed programming language that builds on JavaScript. I am using Typescript on a project of this size primarily for catching errors at compile, and how typing acts as an important form of documentation",
     },
   ],
 };
