@@ -94,7 +94,7 @@ export default function Home(
           </button>
 
           <a
-            className="group flex flex-col items-center cursor-pointer group w-12 sm:w-20 hover:text-white"
+            className="group flex flex-col items-center cursor-pointer group w-12 sm:w-20 dark:hover:text-white hover:text-[#06202A]"
             href="/Eric Anderson Resume.pdf"
             download
           >
@@ -105,7 +105,7 @@ export default function Home(
           </a>
 
           <a
-            className="group flex flex-col items-center cursor-pointer group w-12 sm:w-20 hover:text-white"
+            className="group flex flex-col items-center cursor-pointer group w-12 sm:w-20 dark:hover:text-white hover:text-[#06202A]"
             href="https://github.com/ETAnderson"
           >
             <CollectionIcon className="h-8 mb-1 group-hover:animate-bounce " />
